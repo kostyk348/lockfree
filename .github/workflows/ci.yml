@@ -1,0 +1,13 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile demo (C11)
+        run: cc -O2 -std=c11 -Wall -Wextra -o /tmp/lf_demo examples/demo.c
+      - name: Run demo (SPSC/MPSC/seqlock/flag checks)
+        run: /tmp/lf_demo
