@@ -1,7 +1,9 @@
 # lockfree
 
 [![CI](https://github.com/kostyk348/lockfree/actions/workflows/ci.yml/badge.svg)](https://github.com/kostyk348/lockfree/actions/workflows/ci.yml)
-
+[![Release](https://img.shields.io/github/v/release/kostyk348/lockfree?sort=semver&color=blue)](https://github.com/kostyk348/lockfree/releases)
+[![License](https://img.shields.io/badge/license-Apache-2.0-green)](https://github.com/kostyk348/lockfree/blob/main/LICENSE)
+[![Last commit](https://img.shields.io/github/last-commit/kostyk348/lockfree?branch=main)](https://github.com/kostyk348/lockfree/commits/main)
 
 **Lock-free primitives for FPU-less microcontrollers.**
 
@@ -29,7 +31,6 @@ critical sections required for the SPSC case.
 #include "lockfree.h"
 
 [![CI](https://github.com/kostyk348/lockfree/actions/workflows/ci.yml/badge.svg)](https://github.com/kostyk348/lockfree/actions/workflows/ci.yml)
-
 
 uint8_t storage[CAP * ESIZE];
 lf_spsc_ring_t q;
