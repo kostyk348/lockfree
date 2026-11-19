@@ -39,8 +39,6 @@ critical sections required for the SPSC case.
 ```c
 #include "lockfree.h"
 
-[![CI](https://github.com/kostyk348/lockfree/actions/workflows/ci.yml/badge.svg)](https://github.com/kostyk348/lockfree/actions/workflows/ci.yml)
-
 uint8_t storage[CAP * ESIZE];
 lf_spsc_ring_t q;
 lf_spsc_init(&q, storage, CAP, ESIZE);
@@ -61,23 +59,13 @@ FIFO order, full-buffer rejection, seqlock consistency, and the flag.
 cc -O2 -std=c11 -o demo examples/demo.c && ./demo
 # SPSC: pushed 8, popped in FIFO order = YES
 
-[![CI](https://github.com/kostyk348/lockfree/actions/workflows/ci.yml/badge.svg)](https://github.com/kostyk348/lockfree/actions/workflows/ci.yml)
-
 # MPSC: accepted 8 / 10 (one rejected when full) = YES
-
-[![CI](https://github.com/kostyk348/lockfree/actions/workflows/ci.yml/badge.svg)](https://github.com/kostyk348/lockfree/actions/workflows/ci.yml)
 
 # MPSC: popped 8 = YES
 
-[![CI](https://github.com/kostyk348/lockfree/actions/workflows/ci.yml/badge.svg)](https://github.com/kostyk348/lockfree/actions/workflows/ci.yml)
-
 # Seqlock: consistent reads = YES, retries = 7
 
-[![CI](https://github.com/kostyk348/lockfree/actions/workflows/ci.yml/badge.svg)](https://github.com/kostyk348/lockfree/actions/workflows/ci.yml)
-
 # Flag: test_and_clear returned 1, now 0
-
-[![CI](https://github.com/kostyk348/lockfree/actions/workflows/ci.yml/badge.svg)](https://github.com/kostyk348/lockfree/actions/workflows/ci.yml)
 
 ```
 
